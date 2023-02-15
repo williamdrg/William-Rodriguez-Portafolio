@@ -1,0 +1,712 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Courgette', cursive;
+}
+
+/* menu */
+
+.nav_container{
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px double #000000;
+    box-shadow: 0px 5px 5px rgb(0, 0, 0, .2);
+    position: fixed;
+    z-index: 2;
+}
+.enlace{
+    position: absolute;
+    padding: 20px 50px;
+}
+.logo{
+    height: 40px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #000000;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+li a .active, li a:hover{
+    background: #0000905f;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #000000;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+section{
+    background: url(fondo.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - 80px);
+}
+
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a .active{
+        background: none;
+        color: red;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
+}
+
+.img_logo {
+    width: 10rem;
+    height: 3rem;
+    z-index: 1;
+    border-radius: 3px;
+    box-shadow: 4px 4px 4px rgb(0, 4, 214)
+}
+
+
+
+/* movimiento circular */
+.front_page {
+    height: auto;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding-top: 50px;
+    /* border: 4px solid black; */    
+}
+
+.box {
+    width: 170px;
+    height: 170px;
+    align-self: center;
+    margin-top: 25px;
+    /* border: 1px solid red; */
+}
+
+.photo_container {
+width: 80vw;
+align-self: center;
+/* border: 1px solid black; */
+box-sizing: border-box;
+}
+
+.photo {
+    width: 100%;
+}
+
+.description {
+    text-align: justify;
+    font-size: 4vmin;
+}
+
+.img1 {
+    width: 2em;
+    height: 2em;
+    position: absolute;
+}
+
+.sql {
+    bottom: 10px;
+    left: 40%;
+}
+.css {
+    left: 20%;
+    bottom: 70%; 
+}
+.html {
+    bottom: 30%;
+    left: 5%;
+}
+.js {
+    bottom: 30%;
+    right: 5%;
+}
+
+.php {
+    bottom:70%;
+    right: 15%;
+}
+
+
+.circular_animation {
+    animation: turn1 10s linear infinite;
+}
+
+@keyframes turn1 {
+    to {
+        transform: rotate(1turn) ; 
+    }
+}
+
+.img1, .esfera img {
+    animation: reversed 5s linear infinite;
+}
+
+.contenedor-img img {
+    width: 100%;
+
+}
+
+@keyframes reversed {
+    to {
+        /* transform: rotateY(1turn); */
+        transform:rotate(-1turn) ; 
+    }
+}
+
+/* Efecto ola en el nombre */
+.name{
+    font-family: system-ui, -apple-system, 
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+    'Helvetica Neue', sans-serif;
+    position: absolute;
+    font-size: 4vmin;
+
+}
+  
+.name_container {
+    width: 80vw;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    /* border: 1px solid black; */
+}
+
+.description_container {
+    padding-top: 20px;
+    /* border: 1px solid blue; */
+}
+
+  .border {
+    color: rgb(255, 255, 255);  
+    text-shadow:
+      -1px -1px 0 rgb(0, 0, 0), 
+      1px -1px 0 rgb(0, 0, 0),
+      -1px 1px 0 rgb(0, 0, 0),
+      1px 1px 0 rgb(0, 0, 0);  
+  }
+  
+  .william {
+    color: #09f;
+    animation: william 3s ease-in-out infinite;
+  }
+  
+  @keyframes william {
+    0%, 100% {
+      clip-path: polygon(
+        0% 47%,
+        10% 48%,
+        33% 54%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  
+    50% {
+      clip-path: polygon(0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+      );
+    }
+  }
+
+@media screen and (min-width: 768px) {
+    
+
+
+    .front_page {
+        height: 80vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .photo_container {
+        width: 45vw;
+        max-width: 400px;
+        order: -1;
+    }
+
+    .photo {
+        width: 100%;
+    }
+
+    .description {
+        margin-top: 30px;
+    }
+
+    .box {
+        width: 30vmin;
+        height: 30vmin;
+        align-self: center;
+    }
+
+    .img1 {
+        width: 3.5em;
+        height: 3.5em;
+    }
+  
+    .sql {
+        bottom: 10px;
+        left: 40%;
+    }
+    .css {
+        left: 20%;
+        bottom: 70%; 
+    }
+    .html {
+        bottom: 30%;
+        left: 5%;
+    }
+    .js {
+        bottom: 30%;
+        right: 5%;
+    }
+    
+    .php {
+        bottom:70%;
+        right: 15%;
+    }
+
+
+} 
+
+/* section about me */
+.about_me{
+    background-color: #f6f6f6;
+    color: #000000;
+    padding: 60px 20px;
+}
+
+.content_section p{
+    font-size: 1.2rem;
+    text-align: justify;
+    padding: 15px;
+}
+
+.about_me h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+
+.content_section p span{
+    color: #512fe8;
+    font-weight:800;
+}
+
+
+.about_me h3{
+    font-size: 25px;
+    font-family: 'Righteous';
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.skills {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.skill, 
+.skill span {
+    width: 190px;
+    height: 154px;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 1;
+    color: white;
+    font-size: 1rem;    
+    font-family:monospace;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px;
+}
+
+.skill::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    height: 150%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.4s linear;
+  }
+
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .skill::after {
+    content: '';
+    position: absolute;
+    background: #C33764;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome   26+, Opera 12+, Safari 7+ */
+    inset: 5px;
+    border-radius: 15px;
+  }  
+
+  .skill:hover {
+    transform: translateY(-10px);
+    transition: all 0.3s;
+  }
+
+  @media screen and (max-width: 425px) {
+    .skill, 
+    .skill span {
+        width:100px;
+        height: 70px;
+        position: relative;
+        display: flex;
+        place-content: center;
+        place-items: center;
+        overflow: hidden;
+        border-radius: 10px;
+        z-index: 1;
+        color: white;
+        font-size: 0.8rem;    
+        font-family:monospace;
+        font-weight: bold;
+        text-align: center;
+        margin: 5px;
+    }
+
+    @keyframes rotBGimg {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(0deg);
+        }
+      }
+
+    .content_section p{
+        font-size: 1.1rem;
+        text-align: justify;
+        padding: 10px;
+    }
+}
+
+.about_me button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #2d02da;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #070000;
+    position: relative;
+    z-index: 1;
+}
+
+.about_me button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #d0ff00;
+    z-index: -1;
+    transition: 1s;
+}
+
+.about_me button:hover .overlay{
+    width: 100%;
+} 
+
+/* projects: tarjetas 3d */
+
+.contenido-seccion > h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding-top: 80px;
+}
+.container__card{
+    max-width: 80vw;
+    margin: auto;
+    margin-top: 20px;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card__father{
+    margin: 20px;
+    perspective: 1000px;
+}
+
+.card__father:hover .card{
+    transform: rotateY(180deg);
+}
+
+
+.card{
+    width: 350px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 600ms;
+
+}
+
+.card__front{
+    background-size: cover;
+    background-position: center;
+}
+
+
+.card__front,
+.card__back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+}
+
+.card__back{
+    transform: rotateY(180deg);
+    background: rgb(206, 208, 233);
+}
+
+.body__card_front{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transform: translateZ(60px);
+}
+
+.bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    border-radius: 20px;
+}
+
+.body__card_back{
+    padding: 40px;
+    text-align: center;
+    transform: translateZ(60px);
+}
+
+.body__card_back p{
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.body__card_back input{
+    padding: 10px 40px;
+    margin-top: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background: #58B0F6;
+    box-shadow: 1px 1px 30px -5px #58B0F6;
+    border-radius: 10px;
+    transition: box-shadow 600ms;
+}
+
+.body__card_back input:hover{
+    box-shadow: 1px 1px 30px 0px #449de6;
+}
+
+
+/* Seccion de contacto */
+
+.contact__container {
+    background-color: #f6f6f6;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.form {
+    width: 90%;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 1em;
+    padding: 3.5em, 1.5em;
+    margin: auto;
+}
+
+.from_container {
+    width: 100%;
+    display: grid;
+    gap: 1em;
+    grid-auto-columns: 100%;
+    padding: 0px 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+}
+
+.from_tittle {
+    text-align: center;
+    font-size: 1.9rem;  
+    margin-bottom: 0.4em;
+}
+
+.form_imput {
+    font-size: 1rem;
+    padding: .8em 1em;
+    outline: none;
+    border: none;
+    border: 1px solid #bbb0b0;
+    border-radius: 0.2em;
+}
+
+.form_input--message {
+    resize: none;
+    padding: 1.8em;
+    margin-bottom: .5em;
+}
+
+.form_cta{
+    font-family: inherit;
+    background-color: #089FE0;
+    color: #fff;
+    border: none;
+    font-weight: 300;
+    padding: .7em 0;
+    border-radius: .2em;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 450px) {
+    .form {
+        padding: 3.5em 1em;
+    }
+}
+
+footer{
+    background-color: #252A2E;
+    color: #fff;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+footer .redes{
+    margin-bottom: 20px;
+}
+footer .redes a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+footer .arriba{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #1CB698;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 18px;
+}
+
